@@ -23,8 +23,4 @@ public class ParkBoy {
 
     }
 
-//    public String fetchCar(String ticket){
-//        return "car";
-//
-//    }
 }

@@ -34,6 +34,19 @@ class ParkingBoyFacts {
 
     }
 
-    
+    @Test
+    void should_return_two_tickets_when_parkingBoy_parking_given_twoCar(){
+        //given
+        ParkBoy parkBoy = new ParkBoy();
+        String firstUserCar = "firstCar";
+        String secondUserCar = "secondCar";
+
+        //when
+        String firstTicket = parkBoy.parking(firstUserCar);
+        String secondTicket =parkBoy.parking(secondUserCar);
+
+        //then
+        assertNotNull(firstTicket,secondTicket);
+    }
 
 }
