@@ -49,4 +49,16 @@ class ParkingBoyFacts {
         assertNotNull(firstTicket,secondTicket);
     }
 
+    @Test
+    void should_return_no_car_when_parkingBoy_fetchUp_car_given_wrongTicket(){
+        //given
+        ParkBoy parkBoy = new ParkBoy();
+        
+
+        //when
+
+        //then
+
+    }
+
 }
