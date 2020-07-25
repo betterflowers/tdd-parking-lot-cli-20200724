@@ -2,6 +2,7 @@ package com.oocl.cultivation.test;
 
 import com.oocl.cultivation.ParkBoy;
 import com.oocl.cultivation.SmartPartBoy;
+import com.oocl.cultivation.SuperSmartPartBoy;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -124,6 +125,24 @@ public class ParkingBoyTestModify {
 
         //then
         // assertEquals("oneCar_second_parkingLot_ticket",ticketInfo);
+        assertEquals("secondCar_first_parkingLot_ticket",secondTicketInfo);
+    }
+
+    //The super smart parking boy will always park cars to the parking lot which has a larger available position rate (positions available / total capacity)
+    @Test
+    void should_return_ticket_of_larger_available_pisition_rate_when_parkingBoy_park_car_given_oneCar(){
+
+        //given
+        String superSmartParkingBoy = "SUPER SMART PARKING BOY";
+        SuperSmartPartBoy superSmartPartBoy = new SuperSmartPartBoy(superSmartParkingBoy);
+        String firstUserCar = "oneCar";
+        String secondUserCar = "secondCar";
+
+        //when
+        superSmartPartBoy.parking(firstUserCar);
+        String secondTicketInfo = superSmartPartBoy.parking(secondUserCar);
+
+        //then
         assertEquals("secondCar_first_parkingLot_ticket",secondTicketInfo);
     }
 
