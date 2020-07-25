@@ -10,8 +10,8 @@ public class ParkBoy {
     HashMap firstParkingLot =parkingLot.getFirstParkingLot();
     HashMap secondParkingLot = parkingLot.getSecondParkingLot();
 
-    public ParkBoy() {
-    }
+//    public ParkBoy() {
+//    }
 
     public String parking(String car) {
 
