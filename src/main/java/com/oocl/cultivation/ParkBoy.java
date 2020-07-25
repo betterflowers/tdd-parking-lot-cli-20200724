@@ -6,33 +6,40 @@ import java.util.HashMap;
 
 public class ParkBoy {
 
-    public HashMap<String,String> parkingLot =new HashMap<>();
+    public HashMap<String, String> parkingLot = new HashMap<>();
 
 
     public ParkBoy() {
     }
 
-    public String parking(String car){
-        if(parkingLot.size()>=10 || parkingLot.containsValue(car) || car == null){
-            return "can't park";
-        }else{
-            String ticketInfo = car+"Ticket";
-            parkingLot.put(ticketInfo,car);
-            return ticketInfo;
+    public String parking(String car) {
+
+        if (parkingLot.size() < 10) {
+
+            if (parkingLot.containsValue(car) || car == null) {
+                return "can't park";
+            } else {
+                String ticketInfo = car + "Ticket";
+                parkingLot.put(ticketInfo, car);
+                return ticketInfo;
+            }
+
+        } else {
+            return "Not enough position";
         }
     }
 
     public String fetchCar(String ticket) {
-        if(parkingLot.get(ticket)!=null){
+        if (parkingLot.get(ticket) != null) {
             String ticketInfo = parkingLot.get(ticket);
             parkingLot.remove(ticket);
             return ticketInfo;
-        }else{
+        } else {
             return "Unrecognized parking ticket";
         }
     }
 
-    public String fetchCar(){
+    public String fetchCar() {
         return "Please provide your parking ticket";
     }
 
