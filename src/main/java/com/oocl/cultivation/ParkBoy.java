@@ -13,7 +13,7 @@ public class ParkBoy {
     }
 
     public String parking(String car){
-        if(parkingLot.size()>=10 || parkingLot.containsValue(car) ){
+        if(parkingLot.size()>=10 || parkingLot.containsValue(car) || car == null){
             return "can't park";
         }else{
             String ticketInfo = car+"Ticket";
