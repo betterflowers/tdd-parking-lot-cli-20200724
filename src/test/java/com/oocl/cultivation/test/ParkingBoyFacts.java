@@ -111,4 +111,18 @@ class ParkingBoyFacts {
         assertEquals("can't park",eleventhUserCarTicket);
     }
 
+    @Test
+    void should_return_no_car_when_parkingBoy_parking_given_parkedCar(){
+        //given
+        ParkBoy parkBoy =new ParkBoy();
+        String userCar = "firstCar";
+
+        //when
+        parkBoy.parking(userCar);
+        String reslut =parkBoy.parking(userCar);
+
+        //then
+        assertEquals("can't park",reslut);
+    }
+
 }
