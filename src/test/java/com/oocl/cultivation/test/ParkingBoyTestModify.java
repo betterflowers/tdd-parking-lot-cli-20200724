@@ -1,6 +1,7 @@
 package com.oocl.cultivation.test;
 
 import com.oocl.cultivation.ParkBoy;
+import com.oocl.cultivation.SmartPartBoy;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -72,7 +73,7 @@ public class ParkingBoyTestModify {
 
     //there are two parking lots managed by the parking boy. The parking boy will park cars to the second parking lot when the first parking lot is full
     @Test
-    void should_return_secone_parkingLot_ticket_when_parkingBoy_park_car_given_more_than_ten_cars(){
+    void should_return_second_parkingLot_ticket_when_parkingBoy_park_car_given_more_than_ten_cars(){
 
         //given
         ParkBoy parkBoy =new ParkBoy();
@@ -106,5 +107,25 @@ public class ParkingBoyTestModify {
         assertEquals("eleventhUserCar_second_parkingLot_ticket",eleventhUserCarTicket);
 
     }
+
+    //     The smart parking boy will always park cars to the parking lot which contains more empty positions.
+    @Test
+    void should_return_ticket_of_more_empty_positions_parkingLot_ticket_when_parkingBoy_park_car_given_oneCar(){
+        //given
+        String smartPartBoyName = "SMART PARKING BOY";
+        SmartPartBoy smartPartBoy = new SmartPartBoy(smartPartBoyName);
+
+        String firstUserCar = "oneCar";
+        String secondUserCar = "secondCar";
+
+        //when
+        smartPartBoy.parking(firstUserCar);
+        String secondTicketInfo = smartPartBoy.parking(secondUserCar);
+
+        //then
+        // assertEquals("oneCar_second_parkingLot_ticket",ticketInfo);
+        assertEquals("secondCar_first_parkingLot_ticket",secondTicketInfo);
+    }
+
 
 }
