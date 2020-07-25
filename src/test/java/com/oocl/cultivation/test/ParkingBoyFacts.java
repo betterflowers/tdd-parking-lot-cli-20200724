@@ -112,17 +112,31 @@ class ParkingBoyFacts {
     }
 
     @Test
-    void should_return_no_car_when_parkingBoy_parking_given_parkedCar(){
+    void should_return_can_not_parking_car_when_parkingBoy_parking_given_parkedCar(){
         //given
-        ParkBoy parkBoy =new ParkBoy();
+        ParkBoy parkBoy = new ParkBoy();
         String userCar = "firstCar";
 
         //when
         parkBoy.parking(userCar);
-        String reslut =parkBoy.parking(userCar);
+        String ticketInfo =parkBoy.parking(userCar);
 
         //then
-        assertEquals("can't park",reslut);
+        assertEquals("can't park",ticketInfo);
+    }
+
+    @Test
+    void should_return_can_not_parking_car_when_parkingBoy_parking_given_null_car(){
+        //given
+        ParkBoy parkBoy = new ParkBoy();
+        String userCar = null;
+
+        //when
+        String ticketInfo = parkBoy.parking(userCar);
+
+        //then
+        assertEquals("can't park",ticketInfo);
+
     }
 
 }
