@@ -1,7 +1,6 @@
 package com.oocl.cultivation.test;
 
 import com.oocl.cultivation.ParkBoy;
-import com.sun.xml.internal.ws.api.ha.StickyFeature;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -60,7 +59,22 @@ class ParkingBoyFacts {
         String userCar = parkBoy.fetchCar(userTicket);
 
         //then
-        assertEquals("wrongTicket",userCar);
+        assertEquals("noCar",userCar);
+    }
+
+    @Test
+    void should_return_no_car_when_parkingBoy_fetchUp_car_given_usedTicket(){
+        //given
+        ParkBoy parkBoy =new ParkBoy();
+        String userCar ="myCar";
+        String userTicket =parkBoy.parking(userCar);
+
+        //when
+        parkBoy.fetchCar(userTicket);
+        String repeatFetchedCar = parkBoy.fetchCar(userTicket);
+
+        //then
+        assertEquals("noCar",repeatFetchedCar);
     }
 
 
