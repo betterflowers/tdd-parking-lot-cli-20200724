@@ -33,4 +33,42 @@ public class ParkingBoyTestbyStoryTwo {
         assertEquals("Please provide your parking ticket",userCar);
     }
 
+    // When the parking boy attempt to park a car into a parking lot without a position. The error message should be "Not enough position."
+    @Test
+    void should_return_error_message_when_parkingBoy_park_car_given_the_eleventh_car(){
+
+        //given
+        ParkBoy parkBoy =new ParkBoy();
+        String firstUserCar = "firstUserCar";
+        String secondUserCar = "secondUserCar";
+        String thirdUserCar = "thirdUserCar";
+        String fourthUserCar = "fourthUserCar";
+        String fifthUserCar = "fifthUserCar";
+        String sixthUserCar = "sixthUserCar";
+        String seventhUserCar = "seventhUserCar";
+        String eighthUserCar = "eighthUserCar";
+        String ninthUserCar = "ninthUserCar";
+        String tenthUserCar = "tenthUserCar";
+        String eleventhUserCar = "eleventhUserCar";
+
+        //when
+        parkBoy.parking(firstUserCar);
+        parkBoy.parking(secondUserCar);
+        parkBoy.parking(thirdUserCar);
+        parkBoy.parking(fourthUserCar);
+        parkBoy.parking(fifthUserCar);
+        parkBoy.parking(sixthUserCar);
+        parkBoy.parking(seventhUserCar);
+        parkBoy.parking(eighthUserCar);
+        parkBoy.parking(ninthUserCar);
+        String tenUserCarTicket = parkBoy.parking(tenthUserCar);
+        String eleventhUserCarTicket = parkBoy.parking(eleventhUserCar);
+
+        //then
+        assertEquals("tenthUserCarTicket",tenUserCarTicket);
+        assertEquals("Not enough position",eleventhUserCarTicket);
+
+    }
+
+
 }
