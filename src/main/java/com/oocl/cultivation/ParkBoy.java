@@ -30,7 +30,10 @@ public class ParkBoy {
         }else{
             return "Unrecognized parking ticket";
         }
+    }
 
+    public String fetchCar(){
+        return "Please provide your parking ticket";
     }
 
 }
