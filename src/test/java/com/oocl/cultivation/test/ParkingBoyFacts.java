@@ -108,8 +108,7 @@ class ParkingBoyFacts {
 
         //then
         assertEquals("tenthUserCarTicket",tenUserCarTicket);
-        assertEquals("noPosition",eleventhUserCarTicket);
+        assertEquals("can't park",eleventhUserCarTicket);
     }
-
 
 }

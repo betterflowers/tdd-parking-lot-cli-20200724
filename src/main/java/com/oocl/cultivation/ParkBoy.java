@@ -10,16 +10,15 @@ public class ParkBoy {
 
 
     public ParkBoy() {
-        System.out.println(parkingLot.size());
     }
 
     public String parking(String car){
-        if(parkingLot.size()<10){
+        if(parkingLot.size()>=10 ){
+            return "can't park";
+        }else{
             String ticketInfo = car+"Ticket";
             parkingLot.put(ticketInfo,car);
             return ticketInfo;
-        }else{
-            return "noPosition";
         }
     }
 
