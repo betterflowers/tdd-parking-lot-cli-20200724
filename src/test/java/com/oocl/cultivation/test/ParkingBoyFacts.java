@@ -77,6 +77,39 @@ class ParkingBoyFacts {
         assertEquals("noCar",repeatFetchedCar);
     }
 
+    @Test
+    void should_return_no_position_when_parkingBoy_parking_given_more_than_ten_cars(){
+        //given
+        ParkBoy parkBoy =new ParkBoy();
+        String firstUserCar = "firstUserCar";
+        String secondUserCar = "secondUserCar";
+        String thirdUserCar = "thirdUserCar";
+        String fourthUserCar = "fourthUserCar";
+        String fifthUserCar = "fifthUserCar";
+        String sixthUserCar = "sixthUserCar";
+        String seventhUserCar = "seventhUserCar";
+        String eighthUserCar = "eighthUserCar";
+        String ninthUserCar = "ninthUserCar";
+        String tenthUserCar = "tenthUserCar";
+        String eleventhUserCar = "eleventhUserCar";
+
+        //when
+        parkBoy.parking(firstUserCar);
+        parkBoy.parking(secondUserCar);
+        parkBoy.parking(thirdUserCar);
+        parkBoy.parking(fourthUserCar);
+        parkBoy.parking(fifthUserCar);
+        parkBoy.parking(sixthUserCar);
+        parkBoy.parking(seventhUserCar);
+        parkBoy.parking(eighthUserCar);
+        parkBoy.parking(ninthUserCar);
+        String tenUserCarTicket = parkBoy.parking(tenthUserCar);
+        String eleventhUserCarTicket = parkBoy.parking(eleventhUserCar);
+
+        //then
+        assertEquals("tenthUserCarTicket",tenUserCarTicket);
+        assertEquals("noPosition",eleventhUserCarTicket);
+    }
 
 
 }

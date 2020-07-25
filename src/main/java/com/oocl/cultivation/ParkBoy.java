@@ -1,7 +1,7 @@
 package com.oocl.cultivation;
 
 
-import java.util.ArrayList;
+import javax.print.DocFlavor;
 import java.util.HashMap;
 
 public class ParkBoy {
@@ -10,11 +10,17 @@ public class ParkBoy {
 
 
     public ParkBoy() {
+        System.out.println(parkingLot.size());
     }
 
     public String parking(String car){
-        parkingLot.put("ticket",car);
-        return "ticket";
+        if(parkingLot.size()<10){
+            String ticketInfo = car+"Ticket";
+            parkingLot.put(ticketInfo,car);
+            return ticketInfo;
+        }else{
+            return "noPosition";
+        }
     }
 
     public String fetchCar(String ticket) {
