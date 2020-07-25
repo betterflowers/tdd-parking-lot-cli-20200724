@@ -28,7 +28,7 @@ public class ParkBoy {
             parkingLot.remove(ticket);
             return ticketInfo;
         }else{
-            return "noCar";
+            return "Unrecognized parking ticket";
         }
 
     }
