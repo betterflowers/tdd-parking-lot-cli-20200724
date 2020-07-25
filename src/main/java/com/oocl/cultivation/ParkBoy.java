@@ -18,8 +18,11 @@ public class ParkBoy {
     }
 
     public String fetchCar(String ticket) {
-        return parkingLot.get(ticket);
-
+        if(parkingLot.get(ticket)!=null){
+            return parkingLot.get(ticket);
+        }else{
+            return "wrongTicket";
+        }
 
     }
 
