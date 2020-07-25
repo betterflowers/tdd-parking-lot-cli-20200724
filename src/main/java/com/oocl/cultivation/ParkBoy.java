@@ -7,7 +7,7 @@ import java.util.HashMap;
 public class ParkBoy {
 
     public HashMap<String, String> parkingLot = new HashMap<>();
-
+    public HashMap<String,String> secondParkingLot = new HashMap<>();
 
     public ParkBoy() {
     }
@@ -15,7 +15,6 @@ public class ParkBoy {
     public String parking(String car) {
 
         if (parkingLot.size() < 10) {
-
             if (parkingLot.containsValue(car) || car == null) {
                 return "can't park";
             } else {
@@ -25,7 +24,9 @@ public class ParkBoy {
             }
 
         } else {
-            return "Not enough position";
+            String secondParkingLotTicketInfo = car + "_second_parkingLot_ticket";
+            secondParkingLot.put(secondParkingLotTicketInfo,car);
+            return secondParkingLotTicketInfo;
         }
     }
 
