@@ -9,13 +9,15 @@ public class ParkBoy {
     ParkingLot parkingLot = new ParkingLot();
     HashMap firstParkingLot =parkingLot.getFirstParkingLot();
     HashMap secondParkingLot = parkingLot.getSecondParkingLot();
+    private Integer capacity = 10;
 
-//    public ParkBoy() {
-//    }
+    public Integer getCapacity() {
+        return capacity;
+    }
 
     public String parking(String car) {
 
-        if (firstParkingLot.size() < 10) {
+        if (firstParkingLot.size() < capacity) {
             if (firstParkingLot.containsValue(car) || car == null) {
                 return "can't park";
             } else {
@@ -36,9 +38,13 @@ public class ParkBoy {
             String ticketInfo = (String)firstParkingLot.get(ticket);
             firstParkingLot.remove(ticket);
             return ticketInfo;
-        } else {
-            return "Unrecognized parking ticket";
+        } if(secondParkingLot.get(ticket) != null){
+            String ticketInfo = (String) secondParkingLot.get(ticket);
+            secondParkingLot.remove(ticket);
+            return ticket;
         }
+            return "Unrecognized parking ticket";
+
     }
 
     public String fetchCar() {

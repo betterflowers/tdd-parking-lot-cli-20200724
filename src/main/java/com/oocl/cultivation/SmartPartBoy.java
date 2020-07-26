@@ -2,11 +2,7 @@ package com.oocl.cultivation;
 
 import java.util.HashMap;
 
-public class SmartPartBoy {
-
-    ParkingLot parkingLot = new ParkingLot();
-    HashMap firstParkingLot =parkingLot.getFirstParkingLot();
-    HashMap secondParkingLot = parkingLot.getSecondParkingLot();
+public class SmartPartBoy extends ParkBoy{
 
     protected String smartPartBoyName = "SMART PARKING BOY";
 
@@ -14,9 +10,10 @@ public class SmartPartBoy {
         this.smartPartBoyName = smartPartBoyName;
     }
 
+    @Override
     public String parking(String car) {
 
-        if (10-firstParkingLot.size() > 10-secondParkingLot.size()) {
+        if (this.getCapacity()-firstParkingLot.size() > this.getCapacity()-secondParkingLot.size()) {
 
             if (firstParkingLot.containsValue(car) || car == null) {
                 return "can't park";
